@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="reciveSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="incoming responce logging" level="full"/>
+    <filter description="" xmlns:ns="http://org.apache.synapse/xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xpath="/soapenv:Envelope/soapenv:Body/ns:getQuoteResponse/ns:return/*[8]/text()">
+        <then>
+            <payloadFactory description="convertToSoap" media-type="xml">
+                <format>
+                    <inline/>
+                </format>
+                <args/>
+            </payloadFactory>
+            <send description="DispatchToEchServer" receive="echoRespoceSeq">
+                <endpoint>
+                    <http method="get" uri-template="http://10.100.1.11:9764/services/echo/ "/>
+                </endpoint>
+            </send>
+        </then>
+        <else>
+            <log description="messageDropLog" separator="#####################"/>
+        </else>
+    </filter>
+</sequence>

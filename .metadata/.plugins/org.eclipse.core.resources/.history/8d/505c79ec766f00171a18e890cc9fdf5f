@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="reciveSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="incoming responce logging" level="full">
+        <property name="message" value="incoming Request to PayLoad###"/>
+    </log>
+    <property name="SOAPAction" scope="transport" type="STRING" value=""/>
+    <payloadFactory description="addSoapBody" media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:echo="http://echo.services.core.carbon.wso2.org" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <echo:echoString>
+                        <!--Optional:-->
+                        <in>$1</in>
+                    </echo:echoString>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg value="string"  expression="//ax2431:name/text()"/>
+      		<arg evaluator="xml" expression="//ax2431:name" xmlns:ax2431="http://services.samples/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <arg evaluator="xml" expression="/soapenv:Envelope/soapenv:Body/ns:getQuoteResponse/ns:return/*[8]/text()" xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope/"/>
+        </args>
+    </payloadFactory>
+    <log description="PayLoadFactoryPass">
+        <property name="property_name" value="PayLoadFactory Passing"/>
+    </log>
+    <log description="AfterPayLoad" level="full">
+        <property name="property_name" value="##################After Log###########3"/>
+	</log>
+    </payloadFactory>                    
+    <!-- log level="full"/>  -->
+    <send description=" passing the responce to the Echo service">
+        <endpoint key="echoServiceEndpoint"/>         
+    </send>	
+</sequence>

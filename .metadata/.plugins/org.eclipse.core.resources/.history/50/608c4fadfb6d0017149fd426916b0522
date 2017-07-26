@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="reciveSeq1" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="incoming responce logging" level="full">
+        <property name="message" value="incoming Request to PayLoad###"/>
+    </log>
+    
+    <payloadFactory description="addSoapBody" media-type="xml">
+        <format>
+            <soapenv:Body>
+      			<echo:echoString>
+         		<!--Optional:-->
+         			<in>$1</in>
+      			</echo:echoString>
+   			</soapenv:Body>
+        </format>
+        <args/>
+    </payloadFactory>
+    
+    <log/>
+</sequence>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Scenario5/src/main/synapse-config/sequences/echoRespoceSeq.xml&apos;" deleteContents="false" description="Delete resource &apos;Scenario5/src/main/synapse-config/sequences/echoRespoceSeq.xml&apos;" element1="/Scenario5/src/main/synapse-config/sequences/echoRespoceSeq.xml" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1500634821867"/>
+</session>

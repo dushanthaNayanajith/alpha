@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="storeJsonResponceToFile_VFS" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+    <send>
+        <endpoint>
+            <address uri="vfs:file:///home/dushantha/user/test/out"/>
+        </endpoint>
+    </send>
+</sequence>

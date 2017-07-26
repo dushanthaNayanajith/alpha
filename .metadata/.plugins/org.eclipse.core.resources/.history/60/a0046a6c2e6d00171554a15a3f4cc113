@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="reciveSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="incoming responce logging" level="full"/>
+    <filter xpath="/soapenv:Envelope/soapenv:Body/ns:getQuoteResponse/ns:return/*[8]/text()">
+        <then>
+            <send description="" receive="echoRespoceSeq">
+                <endpoint>
+                    <http method="get" uri-template="http://10.100.1.11:9764/services/echo/ "/>
+                    <description>echoEP</description>
+                </endpoint>
+            </send>
+        </then>
+        <else/>
+    </filter>
+    <send/>
+</sequence>

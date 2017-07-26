@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="messageIn" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="RequestIn" level="full"/>
+    <send receive="reciveSeq">
+        <endpoint key="simpleStockQuoteServiceEndpoint"/>
+    </send>
+</sequence>

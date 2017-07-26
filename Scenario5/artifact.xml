@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="scenario5IEP" groupId="com.example.Scenario5.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/scenario5IEP.xml</file>
+    </artifact>
+    <artifact name="messageIn" groupId="com.example.Scenario5.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/messageIn.xml</file>
+    </artifact>
+    <artifact name="reciveSeq" groupId="com.example.Scenario5.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/reciveSeq.xml</file>
+    </artifact>
+    <artifact name="storeJsonResponceToFile_VFS" groupId="com.example.Scenario5.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/storeJsonResponceToFile_VFS.xml</file>
+    </artifact>
+    <artifact name="echoServiceEndpoint" groupId="com.example.Scenario5.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/echoServiceEndpoint.xml</file>
+    </artifact>
+    <artifact name="simpleStockQuoteServiceEndpoint" groupId="com.example.Scenario5.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/simpleStockQuoteServiceEndpoint.xml</file>
+    </artifact>
+</artifacts>
